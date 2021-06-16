@@ -47,5 +47,26 @@ h2 {
 }
 // 5. game
 //      a. choice-container
+.choice-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 //      b. choice
+.choice {
+    width: 40%;
+    border-radius: 100%;
+    margin: 1rem;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 20px grey;
+    img {
+        width: 40%;
+        height: 40%;
+    }
+}
 // 6. rules
