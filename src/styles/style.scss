@@ -29,9 +29,22 @@ header {
 }
 h1 {
     font-weight: 700;
-    line-height: 1;
 }
-.score-container {}
+.score-container {
+    background-color: whitesmoke;
+    color: $header-text;
+    border-radius: 5px;
+    padding: .5rem 3rem;
+    text-align: center;
+}
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.score {
+    font-size: 4rem;
+    font-weight: 700;
+}
 // 5. game
 //      a. choice-container
 //      b. choice
