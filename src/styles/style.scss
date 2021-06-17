@@ -91,3 +91,14 @@ h2 {
     background-image: $scissors-gradient;
 }
 // 6. rules 
+.rules-button {
+    border: solid 2px $header-text;
+    padding: .5rem 2.5rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    background-color: transparent;
+    color: whitesmoke;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

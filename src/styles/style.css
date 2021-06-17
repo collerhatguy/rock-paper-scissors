@@ -185,4 +185,16 @@ h2 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
   background-image: linear-gradient(#ec9e0e, #eca922);
 }
+
+.rules-button {
+  border: solid 2px #606e85;
+  padding: .5rem 2.5rem;
+  margin: 2rem;
+  border-radius: .5rem;
+  background-color: transparent;
+  color: whitesmoke;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */
