@@ -147,11 +147,29 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: solid 20px grey;
 }
 
 .choice img {
   width: 40%;
   height: 40%;
+}
+
+.choice::after {
+  width: 110% !important;
+}
+
+.rock::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
+  background-image: linear-gradient(#dc2e4e, #dd405d);
+}
+
+.paper::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
+  background-image: linear-gradient(#4865f4, #5671f5);
+}
+
+.scissors::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
+  background-image: linear-gradient(#ec9e0e, #eca922);
 }
 /*# sourceMappingURL=style.css.map */

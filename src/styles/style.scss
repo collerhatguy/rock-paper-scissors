@@ -63,10 +63,22 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 20px grey;
     img {
         width: 40%;
         height: 40%;
     }
+    &::after {
+        width: 110% !important;
+    }
 }
-// 6. rules
+
+.rock::after {
+    background-image: $rock-gradient;
+}
+.paper::after {
+    background-image: $paper-gradient;
+}
+.scissors::after {
+    background-image: $scissors-gradient;
+}
+// 6. rules 

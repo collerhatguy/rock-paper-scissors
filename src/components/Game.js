@@ -7,9 +7,9 @@ import Choice from "./Choice";
 export default function Game({setScore}) {
     return (
         <section className="choice-container">
-            <Choice image={rock} />
-            <Choice image={scissors} />
-            <Choice image={paper} />
+            <Choice image={rock} name={"rock"} />
+            <Choice image={scissors} name={"scissors"} />
+            <Choice image={paper}  name={"paper"} />
         </section>
     )
 }
