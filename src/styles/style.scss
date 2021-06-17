@@ -58,6 +58,13 @@ h2 {
     width: 70%;
     @include center-flex();
 }
+.hidden {
+    display: none;
+}
+.player-choice {
+    text-align: center;
+    font-size: 3rem;
+}
 //      b. choice-container
 .choice-container {
     width: 70%;
