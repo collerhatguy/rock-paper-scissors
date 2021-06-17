@@ -61,17 +61,17 @@ h2 {
 }
 //      b. choice-border
 .choice-border {
-    width: 40%;
-    height: 40%;
+    width: $choice-size;
+    height: $choice-size;
     border-radius: 100%;
-    margin: 3rem 1rem 1rem;
-    padding: 3rem 1rem;
+    margin: 2rem 1rem 0rem;
+    padding: 2rem;
     @include center-flex();
 }
 //      c. choice
 .choice {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
     background-color: whitesmoke;
     @include center-flex();
