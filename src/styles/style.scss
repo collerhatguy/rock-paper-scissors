@@ -16,6 +16,11 @@
 
 
 // 3. mixins
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 // 4. header
 header {
     display: flex;
@@ -54,31 +59,35 @@ h2 {
     align-items: center;
     flex-wrap: wrap;
 }
-//      b. choice
-.choice {
+//      b. choice-border
+.choice-border {
     width: 40%;
+    height: 40%;
     border-radius: 100%;
-    margin: 1rem;
+    margin: 3rem 1rem 1rem;
+    padding: 3rem 1rem;
+    @include center-flex();
+}
+//      c. choice
+.choice {
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
     background-color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-flex();
     img {
         width: 40%;
         height: 40%;
     }
-    &::after {
-        width: 110% !important;
-    }
 }
 
-.rock::after {
+.rock {
     background-image: $rock-gradient;
 }
-.paper::after {
+.paper {
     background-image: $paper-gradient;
 }
-.scissors::after {
+.scissors {
     background-image: $scissors-gradient;
 }
 // 6. rules 

@@ -133,20 +133,37 @@ h2 {
       flex-wrap: wrap;
 }
 
-.choice {
+.choice-border {
   width: 40%;
+  height: 40%;
   border-radius: 100%;
-  margin: 1rem;
+  margin: 3rem 1rem 1rem;
+  padding: 3rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.choice {
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
   background-color: whitesmoke;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .choice img {
@@ -154,21 +171,17 @@ h2 {
   height: 40%;
 }
 
-.choice::after {
-  width: 110% !important;
-}
-
-.rock::after {
+.rock {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#dc2e4e), to(#dd405d));
   background-image: linear-gradient(#dc2e4e, #dd405d);
 }
 
-.paper::after {
+.paper {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#4865f4), to(#5671f5));
   background-image: linear-gradient(#4865f4, #5671f5);
 }
 
-.scissors::after {
+.scissors {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
   background-image: linear-gradient(#ec9e0e, #eca922);
 }
