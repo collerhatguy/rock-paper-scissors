@@ -187,6 +187,7 @@ h2 {
 }
 
 .rules-button {
+  cursor: pointer;
   border: solid 2px #606e85;
   padding: .5rem 2.5rem;
   margin: 2rem;
@@ -196,5 +197,48 @@ h2 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+.backdrop {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.rules-modal {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 30%;
+  right: 30%;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.rules-title {
+  font-size: 3rem;
+  color: #3b4363;
+  font-weight: 700;
+}
+
+.exit-button {
+  cursor: pointer;
+  font-size: 3rem;
+  background-color: whitesmoke;
+  color: #606e85;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */

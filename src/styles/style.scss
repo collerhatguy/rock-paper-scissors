@@ -7,6 +7,8 @@
 //      a. choice-container
 //      b. choice
 // 6. rules
+// 7. modals
+//      a. rules-modal
 
 // 1. variables
 @import "./variables";
@@ -90,8 +92,10 @@ h2 {
 .scissors {
     background-image: $scissors-gradient;
 }
+
 // 6. rules 
 .rules-button {
+    cursor: pointer;
     border: solid 2px $header-text;
     padding: .5rem 2.5rem;
     margin: 2rem;
@@ -101,4 +105,37 @@ h2 {
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+// 7. modals
+.backdrop {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+//      a. rules-modal
+.rules-modal {
+    position: absolute;
+    top: 20%; bottom: 20%;
+    left: 30%; right: 30%;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.rules-title {
+    font-size: 3rem;
+    color: $dark-text;
+    font-weight: 700;
+}
+.exit-button {
+    cursor: pointer;
+    font-size: 3rem;
+    background-color: whitesmoke;
+    color: $header-text;
+    border: none;
 }
