@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import rock from "../images/icon-rock.svg";
-import paper from "../images/icon-paper.svg";
-import scissors from "../images/icon-scissors.svg";
-import Choice from "./Choice";
+import ChoiceContainer from "./ChoiceContainer";
 
 export default function Game({setScore}) {
     const [gameStart, setGameStart] = useState(false);
@@ -12,22 +9,15 @@ export default function Game({setScore}) {
     }, [playerChoice]);
     return (
         <section className="game-container">
-            <div className="choice-container">
-                <Choice 
-                    image={rock} 
-                    name={"rock"} 
-                    setChoice={setPlayerChoice} 
-                    startGame={() => setGameStart(true)} />
-                <Choice 
-                    image={scissors} 
-                    name={"scissors"} 
-                    setChoice={setPlayerChoice} 
-                    startGame={() => setGameStart(true)} />
-                <Choice 
-                    image={paper}  
-                    name={"paper"} 
-                    setChoice={setPlayerChoice} 
-                    startGame={() => setGameStart(true)} />
+            <ChoiceContainer setPlayerChoice={setPlayerChoice} setGameStart={setGameStart} />
+            <div className="game-step-1">
+
+            </div>
+            <div className="game-step-2">
+
+            </div>
+            <div className="game-step-3">
+
             </div>
         </section>
     )
