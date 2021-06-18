@@ -166,8 +166,17 @@ h2 {
     padding: 3rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    img {
+        width: 100%;
+    }
+}
+.rules-modal-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap;
 }
 .rules-title {
     font-size: 3rem;
