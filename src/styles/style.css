@@ -227,8 +227,8 @@ h2 {
 .house-choice {
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-animation: scaleUp 1s ease-out 1s forwards;
-          animation: scaleUp 1s ease-out 1s forwards;
+  -webkit-animation: scaleUp 1s ease-out 0s forwards;
+          animation: scaleUp 1s ease-out 0s forwards;
 }
 
 .outcome-declaration {
@@ -245,8 +245,10 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-animation: grow 1s ease-in-out 0s forwards;
-          animation: grow 1s ease-in-out 0s forwards;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-animation: grow 1s ease-in-out 1s forwards;
+          animation: grow 1s ease-in-out 1s forwards;
 }
 
 .outcome-declaration h2 {

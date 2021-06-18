@@ -115,14 +115,15 @@ h2 {
 }
 .house-choice {
     transform: scale(0);
-    animation: scaleUp 1s ease-out 1s forwards;
+    animation: scaleUp 1s ease-out 0s forwards;
 }
 .outcome-declaration {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: grow 1s ease-in-out 0s forwards;
+    transform: scaleX(0);
+    animation: grow 1s ease-in-out 1s forwards;
     h2 {
         font-size: 3rem;
     }
