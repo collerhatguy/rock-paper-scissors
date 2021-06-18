@@ -138,9 +138,9 @@ h2 {
   display: none;
 }
 
-.player-choice {
+.player-choice, .house-choice {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .choice-container {
@@ -210,6 +210,15 @@ h2 {
 .scissors {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ec9e0e), to(#eca922));
   background-image: linear-gradient(#ec9e0e, #eca922);
+}
+
+.game-step-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 4fr;
+      grid-template-rows: 1fr 4fr;
 }
 
 .rules-button {

@@ -61,9 +61,9 @@ h2 {
 .hidden {
     display: none;
 }
-.player-choice {
+.player-choice, .house-choice {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 //      b. choice-container
 .choice-container {
@@ -107,6 +107,12 @@ h2 {
 }
 .scissors {
     background-image: $scissors-gradient;
+}
+
+.game-step-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
 }
 
 // 6. rules 

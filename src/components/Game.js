@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ChoiceContainer from "./ChoiceContainer";
-import Choice from "./Choice";
+import ChoiceReveal from './ChoiceReveal';
 
 export default function Game({setScore}) {
     const [gameStart, setGameStart] = useState(false);
@@ -15,14 +15,10 @@ export default function Game({setScore}) {
                 setGameStart={setGameStart} 
                 gameStart={gameStart} 
             />
-            <div className={`${gameStart ? "game-step-1" : "hidden"}`}>
-                <h2 className="player-choice">You Picked: </h2>
-                <Choice 
-                        name={playerChoice}
-                        setChoice={() => null}
-                        startGame={() => null}
-                        />
-            </div>
+            <ChoiceReveal 
+                gameStart={gameStart} 
+                playerChoice={playerChoice} 
+            />
             <div className="game-step-2">
 
             </div>
