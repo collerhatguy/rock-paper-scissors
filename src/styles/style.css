@@ -224,7 +224,17 @@ h2 {
   font-size: 2rem;
 }
 
+.house-choice {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: scaleUp 1s ease-out 1s forwards;
+          animation: scaleUp 1s ease-out 1s forwards;
+}
+
 .outcome-declaration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -235,6 +245,8 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-animation: grow 1s ease-in-out 0s forwards;
+          animation: grow 1s ease-in-out 0s forwards;
 }
 
 .outcome-declaration h2 {
@@ -302,5 +314,49 @@ h2 {
   background-color: whitesmoke;
   color: #606e85;
   border: none;
+}
+
+@-webkit-keyframes grow {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes grow {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

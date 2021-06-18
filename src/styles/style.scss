@@ -9,6 +9,7 @@
 // 6. rules
 // 7. modals
 //      a. rules-modal
+// 8. animation
 
 // 1. variables
 @import "./variables";
@@ -68,9 +69,6 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: 1fr 1fr;
 }
 //      c. choice-border
 .choice-border {
@@ -115,10 +113,16 @@ h2 {
         font-size: 2rem;
     }
 }
+.house-choice {
+    transform: scale(0);
+    animation: scaleUp 1s ease-out 1s forwards;
+}
 .outcome-declaration {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: grow 1s ease-in-out 0s forwards;
     h2 {
         font-size: 3rem;
     }
@@ -175,4 +179,21 @@ h2 {
     background-color: whitesmoke;
     color: $header-text;
     border: none;
+}
+// 8. animation
+@keyframes grow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+@keyframes scaleUp {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1);
+    }
 }

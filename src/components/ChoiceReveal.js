@@ -8,12 +8,13 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
     const [houseChoice, setHouseChoice] = useState("")
     useEffect(() => {
         if (gameStart === false) setOutcome("");
+        if (gameStart === false) return;
         setHouseChoice(choices[randomNum()]);
         if (playerChoice === houseChoice) setOutcome("Tie");
         if (playerChoice === "rock" && houseChoice === "scissors") setOutcome("YOU WIN");
         if (playerChoice === "paper" && houseChoice === "rock") setOutcome("YOU WIN");
         if (playerChoice === "scissors" && houseChoice === "paper") setOutcome("YOU WIN");
-        if (outcome === "") setOutcome("YOU LOSE");
+        if (outcome.length === 0) setOutcome("YOU LOSE");
         if (outcome === "YOU WIN") setScore(prevScore => prevScore + 1);
         if (outcome === "YOU LOSE") setScore(prevScore => prevScore - 1);
     }, [gameStart]);
