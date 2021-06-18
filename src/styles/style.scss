@@ -61,10 +61,6 @@ h2 {
 .hidden {
     display: none;
 }
-.player-choice, .house-choice {
-    text-align: center;
-    font-size: 2rem;
-}
 //      b. choice-container
 .choice-container {
     width: 70%;
@@ -109,10 +105,29 @@ h2 {
     background-image: $scissors-gradient;
 }
 
+//      e. game-step-1 
 .game-step-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 4fr;
+    @include center-flex();
+}
+.player-choice, .house-choice {
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+.outcome-declaration {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+        font-size: 3rem;
+    }
+    button {
+        padding: .5rem 1rem;
+        margin: .5rem;
+        width: 100%;
+        color: red;
+    }
 }
 
 // 6. rules 

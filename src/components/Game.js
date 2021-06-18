@@ -18,6 +18,8 @@ export default function Game({setScore}) {
             <ChoiceReveal 
                 gameStart={gameStart} 
                 playerChoice={playerChoice} 
+                reset={() => setGameStart(false)}
+                setScore={setScore}
             />
             <div className="game-step-2">
 
