@@ -10,6 +10,7 @@
 // 7. modals
 //      a. rules-modal
 // 8. animation
+// 9. media query
 
 // 1. variables
 @import "./variables";
@@ -183,12 +184,15 @@ h2 {
     color: $dark-text;
     font-weight: 700;
 }
-.exit-button {
+.exit-button-desktop, .exit-button-mobile {
     cursor: pointer;
     font-size: 3rem;
     background-color: whitesmoke;
     color: $header-text;
     border: none;
+}
+.exit-button-mobile {
+    display: none;
 }
 // 8. animation
 @keyframes grow {
@@ -205,5 +209,35 @@ h2 {
     }
     to {
         transform: scale(1);
+    }
+}
+// 9. media query
+@media (max-width: 800px) {
+    .rules-modal {
+        inset: 0;
+    }
+    .rules-title{
+        text-align: center;
+        width: 100%;
+    }
+    .exit-button-desktop {
+        display: none;
+    }
+    .exit-button-mobile {
+        display: flex;
+    }
+}
+@media (max-width: 400px) {
+    main {
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    header {
+        width: 80%;
+    }
+    .rules-button {
+        padding: 1rem 5rem;
+        position: relative;
     }
 }

@@ -11,10 +11,15 @@ export default function RulesModal({visible, exit}) {
                     <h2 className="rules-title">RULES</h2>
                     <button 
                         onClick={() => exit()}
-                        className="exit-button">X</button>
+                        className="exit-button-desktop">X</button>
                     
                 </div>
                 <img src={rulesImage} />
+                <button 
+                    onClick={() => exit()}
+                    className="exit-button-mobile"
+                >X</button>
+                    
             </div>
         </div>
     )
