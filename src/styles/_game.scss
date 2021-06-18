@@ -53,6 +53,7 @@
     @include center-flex();
 }
 .player-choice, .house-choice {
+    margin: 2rem;
     h2 {
         text-align: center;
         font-size: 2rem;
@@ -62,7 +63,9 @@
     transform: scale(0);
     animation: scaleUp 1s ease-out 0s forwards;
 }
-.outcome-declaration {
+.outcome-declaration-desktop, .outcome-declaration-mobile {
+    
+    margin: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,4 +81,7 @@
         width: 100%;
         color: red;
     }
+}
+.outcome-declaration-mobile {
+    display: none !important;
 }

@@ -86,9 +86,6 @@
     .choice-reveal {
         flex-direction: column;
     }
-    .outcome-declaration {
-        margin: 2rem;
-    }
 }
 @media (max-width: 400px) {
     main {
@@ -103,5 +100,13 @@
     .rules-button {
         padding: 1rem 5rem;
         position: relative;
+    }
+    .outcome-declaration-desktop {
+        display: none !important;
+    }
+    .outcome-declaration-mobile {
+        display: flex !important;
+        width: 100%;
+        
     }
 }

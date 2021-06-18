@@ -30,7 +30,7 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
             </div>
             <div
                 style={{display: outcome === "" ? "none" : "flex"}} 
-                className="outcome-declaration">
+                className="outcome-declaration-desktop">
                 <h2>{outcome}</h2>
                 <button
                     onClick={() => reset()}
@@ -43,6 +43,14 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                     setChoice={() => null}
                     startGame={() => null}
                 />
+            </div>
+            <div
+                style={{display: outcome === "" ? "none" : "flex"}} 
+                className="outcome-declaration-mobile">
+                <h2>{outcome}</h2>
+                <button
+                    onClick={() => reset()}
+                    >Play Again</button>
             </div>
         </div>
     )

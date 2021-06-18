@@ -219,6 +219,10 @@ h2 {
           align-items: center;
 }
 
+.player-choice, .house-choice {
+  margin: 2rem;
+}
+
 .player-choice h2, .house-choice h2 {
   text-align: center;
   font-size: 2rem;
@@ -231,7 +235,8 @@ h2 {
           animation: scaleUp 1s ease-out 0s forwards;
 }
 
-.outcome-declaration {
+.outcome-declaration-desktop, .outcome-declaration-mobile {
+  margin: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,15 +256,19 @@ h2 {
           animation: grow 1s ease-in-out 1s forwards;
 }
 
-.outcome-declaration h2 {
+.outcome-declaration-desktop h2, .outcome-declaration-mobile h2 {
   font-size: 3rem;
 }
 
-.outcome-declaration button {
+.outcome-declaration-desktop button, .outcome-declaration-mobile button {
   padding: .5rem 1rem;
   margin: .5rem;
   width: 100%;
   color: red;
+}
+
+.outcome-declaration-mobile {
+  display: none !important;
 }
 
 .rules-button {
@@ -410,9 +419,6 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .outcome-declaration {
-    margin: 2rem;
-  }
 }
 
 @media (max-width: 400px) {
@@ -435,6 +441,15 @@ h2 {
   .rules-button {
     padding: 1rem 5rem;
     position: relative;
+  }
+  .outcome-declaration-desktop {
+    display: none !important;
+  }
+  .outcome-declaration-mobile {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
