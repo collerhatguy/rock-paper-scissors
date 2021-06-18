@@ -21,11 +21,6 @@ export default function Game({setScore}) {
                 reset={() => setGameStart(false)}
                 setScore={setScore}
             />
-            <div className="game-step-2">
-
-            </div>
-            <div className="game-step-3">
-            </div>
         </section>
     )
 }

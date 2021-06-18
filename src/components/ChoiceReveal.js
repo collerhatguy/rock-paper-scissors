@@ -19,7 +19,7 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
         if (outcome === "YOU LOSE") setScore(prevScore => prevScore - 1);
     }, [gameStart]);
     return (
-        <div className={`${gameStart ? "game-step-1" : "hidden"}`}>
+        <div className={`${gameStart ? "choice-reveal" : "hidden"}`}>
             <div className="player-choice">
                 <h2>You Picked</h2>
                 <Choice 

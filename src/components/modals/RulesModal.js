@@ -19,7 +19,6 @@ export default function RulesModal({visible, exit}) {
                     onClick={() => exit()}
                     className="exit-button-mobile"
                 >X</button>
-                    
             </div>
         </div>
     )

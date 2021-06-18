@@ -104,8 +104,8 @@ h2 {
     background-image: $scissors-gradient;
 }
 
-//      e. game-step-1 
-.game-step-1 {
+//      e. choice-reveal 
+.choice-reveal {
     @include center-flex();
 }
 .player-choice, .house-choice {
@@ -226,7 +226,7 @@ h2 {
     .exit-button-mobile {
         display: flex;
     }
-    .game-step-1 {
+    .choice-reveal {
         flex-direction: column;
     }
     .outcome-declaration {
