@@ -2,21 +2,20 @@ import React, { useState, useEffect } from 'react'
 import Choice from "./Choice";
 
 export default function ChoiceReveal({gameStart, playerChoice, reset, setScore}) {
+    const randomNum = () => Math.floor(Math.random() * 3);
     const choices = ["rock", "paper", "scissors"];
     const [outcome, setOutcome] = useState("");
-    const [houseChoice, setHouseChoice] = useState(choices[Math.ceil(Math.random() * 3)])
+    const [houseChoice, setHouseChoice] = useState("")
     useEffect(() => {
-        setOutcome("")
-        setHouseChoice(choices[Math.ceil(Math.random() * 3)])
-        setTimeout(() => {
-            if (playerChoice === houseChoice) setOutcome("Tie");
-            if (playerChoice === "rock" && houseChoice === "paper") setOutcome("YOU WIN");
-            if (playerChoice === "paper" && houseChoice === "scissors") setOutcome("YOU WIN");
-            if (playerChoice === "scissors" && houseChoice === "paper") setOutcome("YOU WIN");
-            if (outcome === "") setOutcome("YOU LOSE");
-            if (outcome === "YOU WIN") setScore(prevScore => prevScore++);
-            if (outcome === "YOU LOSE") setScore(prevScore => prevScore--);
-        }, 1000)
+        setOutcome("");
+        setHouseChoice(choices[randomNum()]);
+        if (playerChoice === houseChoice) setOutcome("Tie");
+        if (playerChoice === "rock" && houseChoice === "scissors") setOutcome("YOU WIN");
+        if (playerChoice === "paper" && houseChoice === "rock") setOutcome("YOU WIN");
+        if (playerChoice === "scissors" && houseChoice === "paper") setOutcome("YOU WIN");
+        if (outcome === "") setOutcome("YOU LOSE");
+        if (outcome === "YOU WIN") setScore(prevScore => prevScore + 1);
+        if (outcome === "YOU LOSE") setScore(prevScore => prevScore - 1);
     }, [gameStart]);
     return (
         <div className={`${gameStart ? "game-step-1" : "hidden"}`}>
