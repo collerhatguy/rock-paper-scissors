@@ -122,7 +122,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: scaleX(0);
+    transform: rotateY(90deg);
     animation: grow 1s ease-in-out 1s forwards;
     h2 {
         font-size: 3rem;
@@ -184,10 +184,10 @@ h2 {
 // 8. animation
 @keyframes grow {
     from {
-        transform: scaleX(0);
+        transform: rotateY(2700deg);
     }
     to {
-        transform: scaleX(1);
+        transform: rotateY(360deg);
     }
 }
 @keyframes scaleUp {

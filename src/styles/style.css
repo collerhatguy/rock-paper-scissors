@@ -245,8 +245,8 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
   -webkit-animation: grow 1s ease-in-out 1s forwards;
           animation: grow 1s ease-in-out 1s forwards;
 }
@@ -320,23 +320,23 @@ h2 {
 
 @-webkit-keyframes grow {
   from {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform: rotateY(2700deg);
+            transform: rotateY(2700deg);
   }
   to {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
 
 @keyframes grow {
   from {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    -webkit-transform: rotateY(2700deg);
+            transform: rotateY(2700deg);
   }
   to {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
 
