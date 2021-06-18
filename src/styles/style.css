@@ -401,6 +401,9 @@ h2 {
     display: -ms-flexbox;
     display: flex;
   }
+  .choice-container {
+    width: 100%;
+  }
   .choice-reveal {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

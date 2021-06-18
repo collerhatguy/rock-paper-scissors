@@ -1,0 +1,44 @@
+
+.backdrop {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+//      a. rules-modal
+.rules-modal {
+    position: absolute;
+    top: 20%; bottom: 20%;
+    left: 30%; right: 30%;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    img {
+        width: 100%;
+    }
+}
+.rules-modal-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.rules-title {
+    font-size: 3rem;
+    color: $dark-text;
+    font-weight: 700;
+}
+.exit-button-desktop, .exit-button-mobile {
+    cursor: pointer;
+    font-size: 3rem;
+    background-color: whitesmoke;
+    color: $header-text;
+    border: none;
+}
+.exit-button-mobile {
+    display: none;
+}

@@ -1,0 +1,29 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    border: solid 2px $header-text;
+    padding: 1.5rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+h1 {
+    font-weight: 700;
+}
+.score-container {
+    background-color: whitesmoke;
+    color: $header-text;
+    border-radius: 5px;
+    padding: .5rem 3rem;
+    text-align: center;
+}
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.score {
+    font-size: 4rem;
+    font-weight: 700;
+}
