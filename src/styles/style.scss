@@ -226,12 +226,19 @@ h2 {
     .exit-button-mobile {
         display: flex;
     }
+    .game-step-1 {
+        flex-direction: column;
+    }
+    .outcome-declaration {
+        margin: 2rem;
+    }
 }
 @media (max-width: 400px) {
     main {
         min-height: 100vh;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
     }
     header {
         width: 80%;
