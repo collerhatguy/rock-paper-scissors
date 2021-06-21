@@ -6,17 +6,28 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
     const choices = ["rock", "paper", "scissors"];
     const [outcome, setOutcome] = useState("");
     const [houseChoice, setHouseChoice] = useState("")
+    const win = () => {
+        setOutcome("YOU WIN");
+        setScore(prevScore => prevScore + 1)
+    }
+    const lose = () => {
+        setOutcome("YOU LOSE");
+        setScore(prevScore => prevScore - 1);
+    }
+    const tie = () => setOutcome("TIE");
+    const undo = () => setOutcome("");
     useEffect(() => {
-        if (gameStart === false) setOutcome("");
-        if (gameStart === false) return;
         setHouseChoice(choices[randomNum()]);
-        if (playerChoice === houseChoice) setOutcome("Tie");
-        if (playerChoice === "rock" && houseChoice === "scissors") setOutcome("YOU WIN");
-        if (playerChoice === "paper" && houseChoice === "rock") setOutcome("YOU WIN");
-        if (playerChoice === "scissors" && houseChoice === "paper") setOutcome("YOU WIN");
-        if (outcome.length === 0) setOutcome("YOU LOSE");
-        if (outcome === "YOU WIN") setScore(prevScore => prevScore + 1);
-        if (outcome === "YOU LOSE") setScore(prevScore => prevScore - 1);
+        if (gameStart === false) return undo();
+        if (playerChoice === "rock" && houseChoice === "scissors") win();
+        if (playerChoice === "paper" && houseChoice === "rock") win();
+        if (playerChoice === "scissors" && houseChoice === "paper") win();
+        if (houseChoice === "rock" && playerChoice === "scissors") lose();
+        if (houseChoice === "paper" && playerChoice === "rock") lose();
+        if (houseChoice === "scissors" && playerChoice === "paper") lose();
+        if (houseChoice === "rock" && playerChoice === "rock") tie();
+        if (houseChoice === "paper" && playerChoice === "paper") tie();
+        if (houseChoice === "scissors" && playerChoice === "scissors") tie();
     }, [gameStart]);
     return (
         <div className={`${gameStart ? "choice-reveal" : "hidden"}`}>
