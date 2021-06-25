@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Choice from "./Choice";
 
 export default function ChoiceReveal({gameStart, playerChoice, reset, setScore}) {
-    const randomNum = () => Math.floor(Math.random() * 3);
     const choices = ["rock", "paper", "scissors"];
     const [outcome, setOutcome] = useState("");
-    const [houseChoice, setHouseChoice] = useState("")
+    const [houseChoice, setHouseChoice] = useState("");
+
+    const randomIndex = () => Math.floor(Math.random() * choices.length);
+    const handleHouseChoice = () => {
+        setHouseChoice(choices[randomIndex()]);
+    }
     const win = () => {
         setOutcome("YOU WIN");
         setScore(prevScore => prevScore + 1)
@@ -17,8 +21,8 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
     const tie = () => setOutcome("TIE");
     const undo = () => setOutcome("");
     useEffect(() => {
-        setHouseChoice(choices[randomNum()]);
         if (gameStart === false) return undo();
+        handleHouseChoice();
         if (playerChoice === "rock" && houseChoice === "scissors") win();
         if (playerChoice === "paper" && houseChoice === "rock") win();
         if (playerChoice === "scissors" && houseChoice === "paper") win();

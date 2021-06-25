@@ -3,7 +3,7 @@ import rock from "../images/icon-rock.svg";
 import paper from "../images/icon-paper.svg";
 import scissors from "../images/icon-scissors.svg";
 
-export default function Choice({ name, setChoice, startGame}) {
+export default function Choice({name, setChoice, startGame}) {
     const handleClick = () => {
         setChoice(name);
         startGame();
