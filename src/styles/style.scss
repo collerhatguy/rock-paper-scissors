@@ -25,6 +25,10 @@
     justify-content: center;
     align-items: center;
 }
+body {
+    @include center-flex();
+    flex-direction: column;
+}
 // 4. header
 @import "./header";
 

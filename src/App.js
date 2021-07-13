@@ -7,11 +7,13 @@ import Rules from "./components/Rules";
 function App() {
   const [score, setScore] = useState(0)
   return (
+  <>
+    <Header score={score} />
     <main className="App">
-      <Header score={score} />
       <Game setScore={setScore} />
       <Rules />
     </main>
+  </>
   );
 }
 

@@ -34,6 +34,7 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
         if (houseChoice === "paper" && playerChoice === "paper") tie();
         if (houseChoice === "scissors" && playerChoice === "scissors") tie();
     }, [gameStart]);
+    
     return gameStart ? <>
         <div className="choice-reveal">
             <div className="player-choice">
@@ -44,14 +45,13 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                     startGame={() => null}
                 />
             </div>
-            <div
-                style={{display: outcome === "" ? "none" : "flex"}} 
+            {outcome === "" ? null : <div
                 className="outcome-declaration-desktop">
                 <h2>{outcome}</h2>
                 <button
                     onClick={() => reset()}
                     >Play Again</button>
-            </div>
+            </div>}
             <div className="house-choice">
                 <h2>The House Picked</h2>
                 <Choice 
@@ -60,14 +60,13 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                     startGame={() => null}
                 />
             </div>
-            <div
-                style={{display: outcome === "" ? "none" : "flex"}} 
+            {outcome == "" ? null : <div
                 className="outcome-declaration-mobile">
                 <h2>{outcome}</h2>
                 <button
                     onClick={() => reset()}
                     >Play Again</button>
-            </div>
+            </div>}
         </div>
     </> : null;
 }
