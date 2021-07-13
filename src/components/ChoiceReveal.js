@@ -20,6 +20,7 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
     }
     const tie = () => setOutcome("TIE");
     const undo = () => setOutcome("");
+
     useEffect(() => {
         if (gameStart === false) return undo();
         handleHouseChoice();
@@ -33,8 +34,8 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
         if (houseChoice === "paper" && playerChoice === "paper") tie();
         if (houseChoice === "scissors" && playerChoice === "scissors") tie();
     }, [gameStart]);
-    return (
-        <div className={`${gameStart ? "choice-reveal" : "hidden"}`}>
+    return gameStart ? <>
+        <div className="choice-reveal">
             <div className="player-choice">
                 <h2>You Picked</h2>
                 <Choice 
@@ -68,5 +69,5 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                     >Play Again</button>
             </div>
         </div>
-    )
+    </> : null;
 }
