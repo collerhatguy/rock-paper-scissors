@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function Header({score}) {
+function Header(props) {
+    const { score } = props;
     return (
         <header>
           <h1>
@@ -15,3 +17,9 @@ export default function Header({score}) {
         </header>
     )
 }
+
+const mapPropsToState = (state) => ({
+    score: state.score
+})
+
+export default connect(mapPropsToState)(Header)

@@ -1,22 +1,12 @@
 import React from 'react'
 import Choice from "./Choice";
 
-export default function ChoiceContainer({setPlayerChoice, setGameStart, gameStart}) {
-    if (gameStart) return null;
+export default function ChoiceContainer() {
     return (
         <div className="choice-container">
-            <Choice 
-                name="rock" 
-                setChoice={setPlayerChoice} 
-                startGame={() => setGameStart(true)} />
-            <Choice 
-                name="scissors" 
-                setChoice={setPlayerChoice} 
-                startGame={() => setGameStart(true)} />
-            <Choice  
-                name="paper" 
-                setChoice={setPlayerChoice} 
-                startGame={() => setGameStart(true)} />
+            <Choice name="rock"/>
+            <Choice name="scissors"/>
+            <Choice name="paper"/>
         </div>
     )
 }

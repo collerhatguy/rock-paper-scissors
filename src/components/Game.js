@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import ChoiceContainer from "./ChoiceContainer";
 import ChoiceReveal from './ChoiceReveal';
 
-export default function Game({setScore}) {
-    const [gameStart, setGameStart] = useState(false);
-    const [playerChoice, setPlayerChoice] = useState("");
-    useEffect(() => {
-        console.log(playerChoice);
-    }, [playerChoice]);
+function Game(props) {
+    const { gameStart } = props;
     return (
         <section className="game-container">
-            <ChoiceContainer 
-                setPlayerChoice={setPlayerChoice} 
-                setGameStart={setGameStart} 
-                gameStart={gameStart} 
-            />
-            <ChoiceReveal 
-                gameStart={gameStart} 
-                playerChoice={playerChoice} 
-                reset={() => setGameStart(false)}
-                setScore={setScore}
-            />
+            {gameStart ? <ChoiceReveal /> : <ChoiceContainer />}
         </section>
     )
 }
+
+const mapStateToProps = (state) => ({
+    gameStart: state.gameStart
+})
+
+export default connect(mapStateToProps)(Game)

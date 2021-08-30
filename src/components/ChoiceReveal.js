@@ -1,39 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { toggleGame, decideWinner, decideHouseChoice } from "../actions";
 import Choice from "./Choice";
 
-export default function ChoiceReveal({gameStart, playerChoice, reset, setScore}) {
-    const choices = ["rock", "paper", "scissors"];
-    const [outcome, setOutcome] = useState("");
-    const [houseChoice, setHouseChoice] = useState("");
-
-    const randomIndex = () => Math.floor(Math.random() * choices.length);
-    const handleHouseChoice = () => {
-        setHouseChoice(choices[randomIndex()]);
-    }
-    const win = () => {
-        setOutcome("YOU WIN");
-        setScore(prevScore => prevScore + 1)
-    }
-    const lose = () => {
-        setOutcome("YOU LOSE");
-        setScore(prevScore => prevScore - 1);
-    }
-    const tie = () => setOutcome("TIE");
-    const undo = () => setOutcome("");
-
-    useEffect(() => {
-        if (gameStart === false) return undo();
-        handleHouseChoice();
-        if (playerChoice === "rock" && houseChoice === "scissors") win();
-        if (playerChoice === "paper" && houseChoice === "rock") win();
-        if (playerChoice === "scissors" && houseChoice === "paper") win();
-        if (houseChoice === "rock" && playerChoice === "scissors") lose();
-        if (houseChoice === "paper" && playerChoice === "rock") lose();
-        if (houseChoice === "scissors" && playerChoice === "paper") lose();
-        if (houseChoice === playerChoice) tie();
-    }, [gameStart]);
+function ChoiceReveal(props) {
     
-    if (!gameStart) return null
+    const { playerChoice, houseChoice, outcome, toggleGame, decideWinner, decideHouseChoice } = props;
+    
+    useEffect(() => {
+        decideHouseChoice()
+        decideWinner()
+    }, [])
 
     return <>
         <div className="choice-reveal">
@@ -45,7 +22,7 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                 className="outcome-declaration-desktop">
                 <h2>{outcome}</h2>
                 <button
-                    onClick={() => reset()}
+                    onClick={toggleGame}
                     >Play Again</button>
             </div>}
             <div className="house-choice">
@@ -57,10 +34,18 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
                     <div
                         className="outcome-declaration-mobile">
                         <h2>{outcome}</h2>
-                        <button onClick={reset}
+                        <button onClick={toggleGame}
                         >Play Again</button>
                     </div>
             }
         </div>
     </>
 }
+
+const mapStateToProps = (state) => ({
+    outcome: state.outcome,
+    playerChoice: state.playerChoice,
+    houseChoice: state.houseChoice
+})
+
+export default connect(mapStateToProps, { toggleGame, decideWinner, decideHouseChoice })(ChoiceReveal)
