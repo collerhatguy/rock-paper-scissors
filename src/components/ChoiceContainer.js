@@ -2,7 +2,8 @@ import React from 'react'
 import Choice from "./Choice";
 
 export default function ChoiceContainer({setPlayerChoice, setGameStart, gameStart}) {
-    return gameStart ? null : (
+    if (gameStart) return null;
+    return (
         <div className="choice-container">
             <Choice 
                 name="rock" 

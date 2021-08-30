@@ -1,22 +1,21 @@
 import React from 'react';
-import rulesImage from "../../images/image-rules.svg";
 
-export default function RulesModal({visible, exit}) {
+export default function RulesModal(props) {
+    const { visible, exit } = props
+    if (!visible) return null
     return (
-        <div
-            style={{display: visible ? "flex" : "none"}} 
-            className="backdrop">
+        <div className="backdrop">
             <div className="rules-modal">
                 <div className="rules-modal-top">
                     <h2 className="rules-title">RULES</h2>
                     <button 
-                        onClick={() => exit()}
-                        className="exit-button-desktop">X</button>
-                    
+                        onClick={exit}
+                        className="exit-button-desktop"
+                    >X</button>
                 </div>
-                <img src={rulesImage} />
+                <img src={`${process.env.PUBLIC_URL}/images/image-rules.svg`} alt="rules"/>
                 <button 
-                    onClick={() => exit()}
+                    onClick={exit}
                     className="exit-button-mobile"
                 >X</button>
             </div>

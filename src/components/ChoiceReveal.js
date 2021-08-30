@@ -30,22 +30,18 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
         if (houseChoice === "rock" && playerChoice === "scissors") lose();
         if (houseChoice === "paper" && playerChoice === "rock") lose();
         if (houseChoice === "scissors" && playerChoice === "paper") lose();
-        if (houseChoice === "rock" && playerChoice === "rock") tie();
-        if (houseChoice === "paper" && playerChoice === "paper") tie();
-        if (houseChoice === "scissors" && playerChoice === "scissors") tie();
+        if (houseChoice === playerChoice) tie();
     }, [gameStart]);
     
-    return gameStart ? <>
+    if (!gameStart) return null
+
+    return <>
         <div className="choice-reveal">
             <div className="player-choice">
                 <h2>You Picked</h2>
-                <Choice 
-                    name={playerChoice}
-                    setChoice={() => null}
-                    startGame={() => null}
-                />
+                <Choice name={playerChoice}/>
             </div>
-            {outcome === "" ? null : <div
+            {outcome.length > 0 && <div
                 className="outcome-declaration-desktop">
                 <h2>{outcome}</h2>
                 <button
@@ -54,19 +50,17 @@ export default function ChoiceReveal({gameStart, playerChoice, reset, setScore})
             </div>}
             <div className="house-choice">
                 <h2>The House Picked</h2>
-                <Choice 
-                    name={houseChoice}
-                    setChoice={() => null}
-                    startGame={() => null}
-                />
+                <Choice name={houseChoice}/>
             </div>
-            {outcome == "" ? null : <div
-                className="outcome-declaration-mobile">
-                <h2>{outcome}</h2>
-                <button
-                    onClick={() => reset()}
-                    >Play Again</button>
-            </div>}
+            {
+                outcome.length > 0 && 
+                    <div
+                        className="outcome-declaration-mobile">
+                        <h2>{outcome}</h2>
+                        <button onClick={reset}
+                        >Play Again</button>
+                    </div>
+            }
         </div>
-    </> : null;
+    </>
 }
