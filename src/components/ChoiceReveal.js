@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { toggleGame, decideWinner, decideHouseChoice } from "../actions";
 import Choice from "./Choice";
+import OutcomeDeclaration from './OutcomeDeclaration';
 
 function ChoiceReveal(props) {
     
-    const { playerChoice, houseChoice, outcome, toggleGame, decideWinner, decideHouseChoice } = props;
+    const { playerChoice, houseChoice, decideWinner, decideHouseChoice } = props;
     
     useEffect(() => {
         decideHouseChoice()
@@ -18,26 +19,12 @@ function ChoiceReveal(props) {
                 <h2>You Picked</h2>
                 <Choice name={playerChoice}/>
             </div>
-            {outcome.length > 0 && <div
-                className="outcome-declaration-desktop">
-                <h2>{outcome}</h2>
-                <button
-                    onClick={toggleGame}
-                    >Play Again</button>
-            </div>}
+            <OutcomeDeclaration className="outcome-declaration-desktop"/>
             <div className="house-choice">
                 <h2>The House Picked</h2>
                 <Choice name={houseChoice}/>
             </div>
-            {
-                outcome.length > 0 && 
-                    <div
-                        className="outcome-declaration-mobile">
-                        <h2>{outcome}</h2>
-                        <button onClick={toggleGame}
-                        >Play Again</button>
-                    </div>
-            }
+            <OutcomeDeclaration className="outcome-declaration-mobile"/>
         </div>
     </>
 }
