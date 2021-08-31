@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ChoiceContainer from "./ChoiceContainer";
 import ChoiceReveal from './ChoiceReveal';
 
-function Game(props) {
+export function Game(props) {
     const { gameStart } = props;
     return (
         <section className="game-container">

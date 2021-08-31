@@ -14,7 +14,7 @@ function ChoiceReveal(props) {
     }, [])
 
     return <>
-        <div className="choice-reveal">
+        <div className="choice-reveal" data-testid="choice-reveal">
             <div className="player-choice">
                 <h2>You Picked</h2>
                 <Choice name={playerChoice}/>
