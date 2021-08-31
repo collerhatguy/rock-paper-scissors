@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-function Header(props) {
+export function Header(props) {
     const { score } = props;
     return (
         <header>
@@ -12,7 +12,10 @@ function Header(props) {
             </h1>
             <div className="score-container">
                 <h2>Score</h2>
-                <span className="score">{score}</span>
+                <span 
+                    className="score"
+                    data-testid="score-container"
+                >{score}</span>
             </div>
         </header>
     )
